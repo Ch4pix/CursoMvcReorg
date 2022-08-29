@@ -12,7 +12,6 @@
 #include "Camisa.h"
 #include "Pantalon.h"
 #include "Cotizacion.h"
-#include "Vendedor.h"
 #include "Controller.h"
 
 Opcion1::Opcion1()

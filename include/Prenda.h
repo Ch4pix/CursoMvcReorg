@@ -17,7 +17,7 @@ public:
 	Prenda();
 	double getPrecioUnitario();
 	void setPrecioUnitario(double prec);
-	void getPrenda();
+	std::string getPrenda();
 	void setCalidad(std::string cal);
 	std::string getCalidad();
 	void setStock(int stk);

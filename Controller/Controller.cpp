@@ -1,26 +1,11 @@
 #include "Controller.h"
 #include "CuelloMao.h"
 #include "MangaCorta.h"
+#include "DTOHistorial.h"
+#include <vector>
 
 Controller::Controller()
 {
-}
-//void Controller::Opc2()
-//{
-//	opcion2.Elejir();
-//}
-void Controller::printDefault()
-{
-	std::cout << "Cotizador Express   /   Menu principal" << std::endl;
-	std::cout << "Elija una opcion : " << std::endl;
-	std::cout << "1: Cotizar." << std::endl;
-	std::cout << "2: Historial de cotizaciones." << std::endl;
-	std::cout << "3: Salir. " << std::endl;
-	std::cin >> opc;
-}
-int Controller::retOpc()
-{
-	return opc;
 }
 void Controller::ctrCrearCamisa()
 {
@@ -119,23 +104,19 @@ void Controller::ctrSetCalidadPantalon(int _opc)
 		pantalon.setStock(500);
 	}
 }
-void Controller::ctrHistorial(std::vector<Prenda>_prenda, std::vector<Cotizacion>_cotizacion)
+vector <DTOHistorial> Controller::ctrHistorial(std::vector<Prenda>_prenda, std::vector<Cotizacion>_cotizacion)
 {
 	system("cls");
+	vector <DTOHistorial>historial;
 	for (int i = 0; i < _prenda.size(); i++)
 	{
-		std::cout << "-----------------" << std::endl;
-		/*std::cout << vendedor.nombre_vendedor << std::endl;
-		std::cout << vendedor.apellido_vendedor << std::endl;
-		std::cout << vendedor.id_vendedor << std::endl;*/
-		_prenda[i].getPrenda();
-		double pu = _prenda[i].getPrecioUnitario();
-		std::cout << "Precio unitario: " << pu << "\n";
-		std::cout << "Cantidad de prendas : " << _cotizacion[i].cantidad_prenda;
-		double total = _cotizacion[i].CotizarTotal(_prenda[i]);
-		std::cout << "El total es : " << total << "\n";
-		std::cout << "\n";
+		dtohistorial.prenda = _prenda[i].getPrenda();
+		dtohistorial.preciuni = _prenda[i].getPrecioUnitario();
+		dtohistorial.total = _cotizacion[i].CotizarTotal(_prenda[i]);
+		dtohistorial.calidad = _prenda[i].getCalidad();
+		historial.push_back(dtohistorial);
 	}
+	return historial;
 }
 
 
@@ -145,10 +126,5 @@ void Controller::Opc1()
 {
 	opcion1.Elejir();
 }
-//void Controller::Opc2()
-//{
-//	opcion2.Elejir(std::vector<Prenda>_prenda, std::vector<Cotizacion>_cotizacion);
-//}
-
 
 

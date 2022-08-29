@@ -4,9 +4,7 @@
 #include <algorithm>
 #include <conio.h>
 #include "Interface.h"
-#include "Vector.h"
 #include "Opcion1.h"
-#include "Opcion2.h"
 #include "Controller.h"
 
 using namespace std;
@@ -27,12 +25,16 @@ void Interface::Ejecutar()
 	Prenda prenda;
 	Cotizacion cotizacion;
 	Controller controller = Controller();
-
+	vector<DTOHistorial>historial;
 
 	while (a != 0)
 	{
-		controller.printDefault();
-		opc = controller.retOpc();
+		std::cout << "Cotizador Express   /   Menu principal" << std::endl;
+		std::cout << "Elija una opcion : " << std::endl;
+		std::cout << "1: Cotizar." << std::endl;
+		std::cout << "2: Historial de cotizaciones." << std::endl;
+		std::cout << "3: Salir. " << std::endl;
+		std::cin >> opc;
 
 		if (opc == 1)
 		{
@@ -41,16 +43,20 @@ void Interface::Ejecutar()
 			prendas.push_back(prenda);
 			cotizacion = controller.opcion1.getCCotizacion();
 			cotizaciones.push_back(cotizacion);
-			/*Opcion1 opcion1 = Opcion1();
-			opcion1.Elejir();
-			prenda = opcion1.getCPrenda();
-			prendas.push_back(prenda);
-			cotizacion = opcion1.getCCotizacion();
-			cotizaciones.push_back(cotizacion);*/
 		}
 		if (opc == 2)
 		{
-			controller.ctrHistorial(prendas, cotizaciones);
+
+			historial = controller.ctrHistorial(prendas, cotizaciones);
+			system("cls");
+			for (int i = 0; i < historial.size(); i++)
+			{
+				cout << historial[i].prenda << endl;
+				cout << historial[i].calidad << endl;
+				cout << "Precio unitario: " << historial[i].preciuni << endl;
+				cout << "Total: " << historial[i].total << endl;
+				cout << "-----------------------\n";
+			}
 		}
 		if (opc == 3)
 		{

@@ -13,7 +13,7 @@
 #include "Camisa.h"
 #include "Pantalon.h"
 #include "Cotizacion.h"
-#include "Vendedor.h"
+
 
 
 

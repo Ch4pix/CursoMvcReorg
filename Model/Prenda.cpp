@@ -20,11 +20,13 @@ void Prenda::setPrecioUnitario(double prec)
 {
 	this->precio_unitario = prec;
 }
-void Prenda::getPrenda()
+std::string Prenda::getPrenda()
 {
 	for (int i = 0; i < vectorcar.size(); i++)
 	{
 		std::cout << vectorcar[i].getCaracteristica() << "\n";
+		return vectorcar[i].getCaracteristica();
+
 	}
 }
 void Prenda::setCalidad(std::string cal)
