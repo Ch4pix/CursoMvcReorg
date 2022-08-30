@@ -1,15 +1,15 @@
-#include "MangaCorta.h"
+#include "TipoManga.h"
 #include <string>
 #include <vector>
 #include "Caracteristica.h"
 
-MangaCorta::MangaCorta()
+TipoManga::TipoManga()
 {
 	this->NombreCaracteristica = "Manga Corta";
 	this->porcentaje = 0.9;
 	this->stockv2 = 250;
 }
-void MangaCorta::MangaLarga()
+void TipoManga::MangaLarga()
 {
 
 	NombreCaracteristica = "Manga Larga";

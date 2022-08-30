@@ -4,10 +4,10 @@
 
 #pragma once
 
-class MangaCorta : public Caracteristica
+class TipoManga : public Caracteristica
 {
 public:
-	MangaCorta();
+	TipoManga();
 	void MangaLarga();
 };
 

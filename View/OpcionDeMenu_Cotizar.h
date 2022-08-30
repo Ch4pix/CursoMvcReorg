@@ -1,5 +1,5 @@
-#ifndef OPCION1_H
-#define OPCION1_H
+#ifndef OPCIONDEMENU_COTIZAR_H
+#define OPCIONDEMENU_COTIZAR_H
 #include <iostream>
 #include <vector>
 #include <string>
@@ -7,8 +7,8 @@
 #include <conio.h>
 #include "Caracteristica.h"
 #include "Prenda.h"
-#include "CuelloMao.h"
-#include "MangaCorta.h"
+#include "TipoCuello.h"
+#include "TipoManga.h"
 #include "Chupin.h"
 #include "Camisa.h"
 #include "Pantalon.h"
@@ -18,14 +18,14 @@
 
 
 #pragma once
-class Opcion1
+class OpcionDeMenu_Cotizar
 {
 public:
 	Prenda prenda;
 	Cotizacion cotizacion;
 public:
-	Opcion1();
-	void Elejir();
+	OpcionDeMenu_Cotizar();
+	void Seleccionar();
 	void setCPrenda(Prenda prenda);
 	Prenda getCPrenda();
 	void setCCotizacion(Cotizacion cotizacion);

@@ -1,24 +1,19 @@
-#include "Opcion1.h"
+#include "OpcionDeMenu_Cotizar.h"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <conio.h>
-#include "Caracteristica.h"
-#include "Prenda.h"
-#include "CuelloMao.h"
-#include "MangaCorta.h"
-#include "Chupin.h"
-#include "Camisa.h"
-#include "Pantalon.h"
-#include "Cotizacion.h"
 #include "Controller.h"
+#include "ControllerCamisa.h"
+#include "ControllerPantalon.h"
 
-Opcion1::Opcion1()
+OpcionDeMenu_Cotizar::OpcionDeMenu_Cotizar()
 {
 }
-void Opcion1::Elejir()
+void OpcionDeMenu_Cotizar::Seleccionar()
 {
+	ControllerCamisa controllercam = ControllerCamisa();
 	Controller controller = Controller();
 	int opc = 0;
 	system("cls");
@@ -29,24 +24,24 @@ void Opcion1::Elejir()
 	if (opc == 1)
 	{
 		system("cls");
-		controller.ctrCrearCamisa();
+		controllercam.ctrCrearCamisa();
 		std::cout << "Elija el tipo de cuello" << std::endl;
 		std::cout << "1: Mao" << std::endl;
 		std::cout << "2: Std (standard)" << std::endl;
 		std::cin >> opc;
-		controller.ctrSetCuello(opc);
+		controllercam.ctrSetCuello(opc);
 		system("cls");
 		std::cout << "Elija el tipo de manga" << std::endl;
 		std::cout << "1: Larga" << std::endl;
 		std::cout << "2: Corta" << std::endl;
 		std::cin >> opc;
-		controller.ctrSetManga(opc);
+		controllercam.ctrSetManga(opc);
 		system("cls");
 		std::cout << "Elija la calidad de la prenda" << std::endl;
 		std::cout << "1: Premium" << std::endl;
 		std::cout << "2: Standard" << std::endl;
 		std::cin >> opc;
-		controller.ctrSetCalidadCamisa(opc);
+		controllercam.ctrSetCalidadCamisa(opc);
 
 		int precio;
 		std::cout << "Ingrese el precio\n";
@@ -58,7 +53,7 @@ void Opcion1::Elejir()
 		cotizacion = controller.ctrGetCotizacion();
 		std::cin >> cotizacion.cantidad_prenda;
 
-		int stok = controller.ctrGetCamisa().getStock();
+		int stok = controllercam.ctrGetCamisa().getStock();
 		std::cout << "stock " << stok << std::endl;
 		while (cotizacion.cantidad_prenda > stok)
 		{
@@ -69,15 +64,15 @@ void Opcion1::Elejir()
 			std::cin >> cotizacion.cantidad_prenda;
 		}
 
-		double res = cotizacion.CotizarTotal(controller.ctrGetCamisa());
+		double res = cotizacion.CotizarTotal(controllercam.ctrGetCamisa());
 		system("cls");
-		controller.ctrGetCamisa().getCamisa();
-		controller.ctrGetCamisa().getPrecioUnitario();
-		controller.ctrGetCamisa().getCalidad();
+		controllercam.ctrGetCamisa().getCamisa();
+		controllercam.ctrGetCamisa().getPrecioUnitario();
+		controllercam.ctrGetCamisa().getCalidad();
 		std::cout << "El total es : " << res << "\n";
 		std::cout << cotizacion.cantidad_prenda << " Cantidad de prenda/s\n";
 		std::cout << "-----------------" << std::endl;
-		this->prenda = controller.ctrGetCamisa();
+		this->prenda = controllercam.ctrGetCamisa();
 		this->cotizacion = cotizacion;
 
 
@@ -87,19 +82,20 @@ void Opcion1::Elejir()
 	}
 	if (opc == 2)
 	{
-		controller.ctrCrearPantalon();
+		ControllerPantalon controllerpant = ControllerPantalon();
+		controllerpant.ctrCrearPantalon();
 		system("cls");
 		std::cout << "Elija el tipo de pantalon" << std::endl;
 		std::cout << "1: Chupin" << std::endl;
 		std::cout << "2: Normal" << std::endl;
 		std::cin >> opc;
-		controller.ctrSetTipoPantalon(opc);
+		controllerpant.ctrSetTipoPantalon(opc);
 		system("cls");
 		std::cout << "Elija la calidad de la prenda" << std::endl;
 		std::cout << "1: Premium" << std::endl;
 		std::cout << "2: Standard" << std::endl;
 		std::cin >> opc;
-		controller.ctrSetCalidadPantalon(opc);
+		controllerpant.ctrSetCalidadPantalon(opc);
 		int precio;
 		std::cout << "Ingrese el precio\n";
 		std::cin >> precio;
@@ -109,7 +105,7 @@ void Opcion1::Elejir()
 		cotizacion = controller.ctrGetCotizacion();
 		std::cin >> cotizacion.cantidad_prenda;
 
-		int stok = controller.ctrGetPantalon().getStock();
+		int stok = controllerpant.ctrGetPantalon().getStock();
 		while (cotizacion.cantidad_prenda > stok)
 		{
 			std::cout << "------------------------" << std::endl;
@@ -119,32 +115,32 @@ void Opcion1::Elejir()
 			std::cin >> cotizacion.cantidad_prenda;
 		}
 
-		double res = cotizacion.CotizarTotal(controller.ctrGetPantalon());
+		double res = cotizacion.CotizarTotal(controllerpant.ctrGetPantalon());
 		system("cls");
-		controller.ctrGetPantalon().getPantalon();
-		controller.ctrGetPantalon().getPrecioUnitario();
-		controller.ctrGetPantalon().getCalidad();
+		controllerpant.ctrGetPantalon().getPantalon();
+		controllerpant.ctrGetPantalon().getPrecioUnitario();
+		controllerpant.ctrGetPantalon().getCalidad();
 		std::cout << "El total es : " << res << "\n";
 		std::cout << cotizacion.cantidad_prenda << " Cantidad de prenda/s\n";
 		std::cout << "-----------------" << std::endl;
-		this->prenda = controller.ctrGetPantalon();
+		this->prenda = controllerpant.ctrGetPantalon();
 		this->cotizacion = cotizacion;
 
 	}
 }
-void Opcion1::setCPrenda(Prenda _prenda)
+void OpcionDeMenu_Cotizar::setCPrenda(Prenda _prenda)
 {
 	this->prenda = _prenda;
 }
-Prenda Opcion1::getCPrenda()
+Prenda OpcionDeMenu_Cotizar::getCPrenda()
 {
 	return prenda;
 }
-void Opcion1::setCCotizacion(Cotizacion _cotizacion)
+void OpcionDeMenu_Cotizar::setCCotizacion(Cotizacion _cotizacion)
 {
 	this->cotizacion = _cotizacion;
 }
-Cotizacion Opcion1::getCCotizacion()
+Cotizacion OpcionDeMenu_Cotizar::getCCotizacion()
 {
 	return cotizacion;
 }

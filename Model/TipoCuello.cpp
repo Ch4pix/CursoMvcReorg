@@ -1,13 +1,13 @@
-#include "CuelloMao.h"
+#include "TipoCuello.h"
 #include <string>
 
-CuelloMao::CuelloMao()
+TipoCuello::TipoCuello()
 {
 	this->stockv2 = 500;
 	this->porcentaje = 1.03;
 	this->NombreCaracteristica = "Camisa cuello Mao";
 }
-void CuelloMao::CuelloNormal()
+void TipoCuello::CuelloNormal()
 {
 	this->stockv2 = 500;
 	this->porcentaje = 1;
