@@ -66,34 +66,6 @@ void Interface::Ejecutar()
 		{
 			break;
 		}
-		/*if (opc == 1)
-		{
-			Controller controller;
-			OpcionDeMenu_Cotizar opc1;
-			DTOHistorial dtohistorial;
-			dtohistorial = opc1.Seleccionar();
-			historial.push_back(dtohistorial);
-
-		}
-		if (opc == 2)
-		{
-			system("cls");
-			for (int i = 0; i < historial.size(); i++)
-			{
-				cout << historial[i].prenda << endl;
-				cout << historial[i].calidad << endl;
-				cout << "Precio unitario: " << historial[i].preciuni << endl;
-				cout << "Total: " << historial[i].total << endl;
-				cout << "-----------------------\n";
-			}
-		}
-		if (opc == 3)
-		{
-			a = 0;
-		}
-
-	}*/
-
 		}
 	}
 }
