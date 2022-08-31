@@ -20,4 +20,31 @@ Cotizacion Controller::ctrGetCotizacion()
 {
 	return cotizacion;
 }
+void Controller::setCPrenda(Prenda _prenda)
+{
+	this->prenda = _prenda;
+}
+Prenda Controller::getCPrenda()
+{
+	return prenda;
+}
+void Controller::setCCotizacion(Cotizacion _cotizacion)
+{
+	this->cotizacion = _cotizacion;
+}
+Cotizacion Controller::getCCotizacion()
+{
+	return cotizacion;
+}
+DTOHistorial Controller::DatosCotizacion(Prenda _prenda, Cotizacion _cotizacion)
+{
+	DTOHistorial dtohistorial;
+	dtohistorial.prenda = _prenda.getPrenda();
+	dtohistorial.preciuni = _prenda.getPrecioUnitario();
+	dtohistorial.total = _cotizacion.CotizarTotal(_prenda);
+	dtohistorial.calidad = _prenda.getCalidad();
+
+	return dtohistorial;
+}
+
 

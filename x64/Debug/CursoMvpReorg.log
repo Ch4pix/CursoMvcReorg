@@ -1,22 +1,5 @@
-﻿  Controller.cpp
-  ControllerCamisa.cpp
-  ControllerHistorial.cpp
-  ControllerPantalon.cpp
-  DTOHistorial.cpp
-  Camisa.cpp
-  Caracteristica.cpp
-  Chupin.cpp
-C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\Model\Chupin.cpp(9,25): warning C4305: '=': truncamiento de 'double' a 'float'
-  Cotizacion.cpp
-  TipoCuello.cpp
-C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\Model\TipoCuello.cpp(7,25): warning C4305: '=': truncamiento de 'double' a 'float'
-  TipoManga.cpp
-C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\Model\TipoManga.cpp(9,24): warning C4305: '=': truncamiento de 'double' a 'float'
-  Pantalon.cpp
-  Prenda.cpp
-  Interface.cpp
+﻿  Interface.cpp
   OpcionDeMenu_Cotizar.cpp
   Generando código...
-C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\Model\Prenda.cpp(31): warning C4715: 'Prenda::getPrenda': no todas las rutas de acceso de control devuelven un valor
-  Source.cpp
+C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\View\OpcionDeMenu_Cotizar.cpp(140): warning C4715: 'OpcionDeMenu_Cotizar::Seleccionar': no todas las rutas de acceso de control devuelven un valor
   CursoMvpReorg.vcxproj -> C:\Users\Salva\Desktop\CursoMvpReorg\x64\Debug\CursoMvpReorg.exe

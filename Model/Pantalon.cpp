@@ -19,7 +19,7 @@ void Pantalon::getPantalon()
 }
 //void Pantalon::Cotizar()
 //{
-//	if (vectorcar[0].getCaracteristica() == "Pantalon Chupin")
+//	if (vectorcar[0].getCaracteristica() == "Pantalon TipoPantalon")
 //	{
 //		precio_unitario = precio_unitario - precio_unitario * 0.12;
 //	}

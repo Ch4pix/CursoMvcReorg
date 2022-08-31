@@ -1,10 +1,9 @@
 #pragma once
 #include "Caracteristica.h"
-class Chupin :
-	public Caracteristica
+class TipoPantalon : public Caracteristica
 {
 public:
-	Chupin();
+	TipoPantalon();
 	void NoChupin();
 };
 

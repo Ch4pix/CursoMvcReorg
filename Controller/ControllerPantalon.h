@@ -1,7 +1,7 @@
 #ifndef CONTROLLERPANTALON_H
 #define CONTROLLERPANTALON_H
-
-#include "OpcionDeMenu_Cotizar.h"
+#include "Pantalon.h"
+#include "TipoPantalon.h"
 
 #pragma once
 class ControllerPantalon

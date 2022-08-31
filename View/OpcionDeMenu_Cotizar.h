@@ -9,11 +9,11 @@
 #include "Prenda.h"
 #include "TipoCuello.h"
 #include "TipoManga.h"
-#include "Chupin.h"
+#include "TipoPantalon.h"
 #include "Camisa.h"
 #include "Pantalon.h"
 #include "Cotizacion.h"
-
+#include "DTOHistorial.h"
 
 
 
@@ -25,12 +25,7 @@ public:
 	Cotizacion cotizacion;
 public:
 	OpcionDeMenu_Cotizar();
-	void Seleccionar();
-	void setCPrenda(Prenda prenda);
-	Prenda getCPrenda();
-	void setCCotizacion(Cotizacion cotizacion);
-	Cotizacion getCCotizacion();
-
+	DTOHistorial Seleccionar();
 };
 #endif 
 

@@ -5,7 +5,8 @@
 #include <conio.h>
 #include "Interface.h"
 #include "OpcionDeMenu_Cotizar.h"
-#include "ControllerHistorial.h"
+#include "Controller.h"
+#include "DTOHistorial.h"
 
 using namespace std;
 
@@ -20,10 +21,7 @@ void Interface::Ejecutar()
 
 	int a = 1;
 	int opc;
-	std::vector<Prenda> prendas;
-	std::vector<Cotizacion> cotizaciones;
-	Prenda prenda;
-	Cotizacion cotizacion;
+
 	vector<DTOHistorial>historial;
 
 	while (a != 0)
@@ -37,17 +35,15 @@ void Interface::Ejecutar()
 
 		if (opc == 1)
 		{
+			Controller controller;
 			OpcionDeMenu_Cotizar opc1;
-			opc1.Seleccionar();
-			prenda = opc1.getCPrenda();
-			prendas.push_back(prenda);
-			cotizacion = opc1.getCCotizacion();
-			cotizaciones.push_back(cotizacion);
+			DTOHistorial dtohistorial;
+			dtohistorial = opc1.Seleccionar();
+			historial.push_back(dtohistorial);
+
 		}
 		if (opc == 2)
 		{
-			ControllerHistorial controllerhistorial = ControllerHistorial();
-			historial = controllerhistorial.ctrHistorial(prendas, cotizaciones);
 			system("cls");
 			for (int i = 0; i < historial.size(); i++)
 			{

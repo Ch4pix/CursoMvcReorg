@@ -12,12 +12,12 @@ void ControllerPantalon::ctrSetTipoPantalon(int _opc)
 {
 	if (_opc == 1)
 	{
-		Chupin chupin = Chupin();
+		TipoPantalon chupin = TipoPantalon();
 		pantalon.setPantalon(chupin);
 	}
 	if (_opc == 2)
 	{
-		Chupin chupin = Chupin();
+		TipoPantalon chupin = TipoPantalon();
 		chupin.NoChupin();
 		pantalon.setPantalon(chupin);
 	}

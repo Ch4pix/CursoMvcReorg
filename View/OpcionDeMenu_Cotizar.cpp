@@ -7,11 +7,13 @@
 #include "Controller.h"
 #include "ControllerCamisa.h"
 #include "ControllerPantalon.h"
+#include "ControllerHistorial.h"
+#include "DTOHistorial.h"
 
 OpcionDeMenu_Cotizar::OpcionDeMenu_Cotizar()
 {
 }
-void OpcionDeMenu_Cotizar::Seleccionar()
+DTOHistorial OpcionDeMenu_Cotizar::Seleccionar()
 {
 	ControllerCamisa controllercam = ControllerCamisa();
 	Controller controller = Controller();
@@ -74,7 +76,10 @@ void OpcionDeMenu_Cotizar::Seleccionar()
 		std::cout << "-----------------" << std::endl;
 		this->prenda = controllercam.ctrGetCamisa();
 		this->cotizacion = cotizacion;
+		DTOHistorial dtohistorial;
+		dtohistorial = controller.DatosCotizacion(prenda, cotizacion);
 
+		return dtohistorial;
 
 
 
@@ -86,7 +91,7 @@ void OpcionDeMenu_Cotizar::Seleccionar()
 		controllerpant.ctrCrearPantalon();
 		system("cls");
 		std::cout << "Elija el tipo de pantalon" << std::endl;
-		std::cout << "1: Chupin" << std::endl;
+		std::cout << "1: TipoPantalon" << std::endl;
 		std::cout << "2: Normal" << std::endl;
 		std::cin >> opc;
 		controllerpant.ctrSetTipoPantalon(opc);
@@ -104,6 +109,7 @@ void OpcionDeMenu_Cotizar::Seleccionar()
 		std::cout << "Ingrese la cantidad de prendas\n";
 		cotizacion = controller.ctrGetCotizacion();
 		std::cin >> cotizacion.cantidad_prenda;
+
 
 		int stok = controllerpant.ctrGetPantalon().getStock();
 		while (cotizacion.cantidad_prenda > stok)
@@ -125,24 +131,12 @@ void OpcionDeMenu_Cotizar::Seleccionar()
 		std::cout << "-----------------" << std::endl;
 		this->prenda = controllerpant.ctrGetPantalon();
 		this->cotizacion = cotizacion;
+		DTOHistorial dtohistorial;
+		dtohistorial = controller.DatosCotizacion(prenda, cotizacion);
+
+		return dtohistorial;
 
 	}
-}
-void OpcionDeMenu_Cotizar::setCPrenda(Prenda _prenda)
-{
-	this->prenda = _prenda;
-}
-Prenda OpcionDeMenu_Cotizar::getCPrenda()
-{
-	return prenda;
-}
-void OpcionDeMenu_Cotizar::setCCotizacion(Cotizacion _cotizacion)
-{
-	this->cotizacion = _cotizacion;
-}
-Cotizacion OpcionDeMenu_Cotizar::getCCotizacion()
-{
-	return cotizacion;
 }
 
 

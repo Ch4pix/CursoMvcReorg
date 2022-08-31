@@ -1,6 +1,8 @@
 #ifndef  CONTROLLERCAMISA_H
 #define CONTROLLERCAMISA_H
-#include "OpcionDeMenu_Cotizar.h"
+#include "Camisa.h"
+#include "TipoCuello.h"
+#include "TipoManga.h"
 
 
 #pragma once
