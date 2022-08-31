@@ -1,5 +1,2 @@
 ﻿  Interface.cpp
-  OpcionDeMenu_Cotizar.cpp
-  Generando código...
-C:\Users\Salva\Desktop\CursoMvpReorg\CursoMvpReorg\View\OpcionDeMenu_Cotizar.cpp(140): warning C4715: 'OpcionDeMenu_Cotizar::Seleccionar': no todas las rutas de acceso de control devuelven un valor
   CursoMvpReorg.vcxproj -> C:\Users\Salva\Desktop\CursoMvpReorg\x64\Debug\CursoMvpReorg.exe

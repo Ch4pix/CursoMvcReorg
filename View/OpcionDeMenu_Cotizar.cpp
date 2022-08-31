@@ -7,7 +7,6 @@
 #include "Controller.h"
 #include "ControllerCamisa.h"
 #include "ControllerPantalon.h"
-#include "ControllerHistorial.h"
 #include "DTOHistorial.h"
 
 OpcionDeMenu_Cotizar::OpcionDeMenu_Cotizar()
