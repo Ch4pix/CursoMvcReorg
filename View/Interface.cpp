@@ -7,6 +7,7 @@
 #include "OpcionDeMenu_Cotizar.h"
 #include "Controller.h"
 #include "DTOHistorial.h"
+#include "Enum.h"
 
 using namespace std;
 
@@ -21,9 +22,9 @@ void Interface::Ejecutar()
 
 	int a = 1;
 	int opc;
-	enum MyEnum { Opcion1 = 1, Opcion2 = 2, Opcion3 = 3 };
-	vector<DTOHistorial>historial;
 
+	vector<DTOHistorial>historial;
+	Enum ennum;
 	while (a != 0)
 	{
 		std::cout << "Cotizador Express   /   Menu principal" << std::endl;
@@ -35,7 +36,7 @@ void Interface::Ejecutar()
 
 		switch (opc)
 		{
-		case Opcion1:
+		case ennum.Quote_Option:
 		{
 			Controller controller;
 			OpcionDeMenu_Cotizar opc1;
@@ -44,7 +45,7 @@ void Interface::Ejecutar()
 			historial.push_back(dtohistorial);
 			break;
 		}
-		case Opcion2:
+		case ennum.ShowHistory_Option:
 		{
 			system("cls");
 			for (int i = 0; i < historial.size(); i++)
@@ -57,7 +58,7 @@ void Interface::Ejecutar()
 			}
 			break;
 		}
-		case Opcion3:
+		case ennum.Quit:
 		{
 			a = 0;
 			break;
